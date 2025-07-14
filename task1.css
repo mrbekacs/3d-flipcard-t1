@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  margin: 0;
+  background: #fff; /* page stays white */
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Purple “stage” just behind your card */
+.card-container {
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: center;      /* vertical centering */
+  width: 100vw;             /* fill viewport width */
+  height: 100vh;            /* fill viewport height */
+  background-color: #101821;
+}
+
+/* The flip-card wrapper */
+.flip-card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Common face styling */
+.flip-card-front,
+.flip-card-back {
+  background-color: #e0e0e0;  /* light grey */
+  border-color:     #bbb;     /* medium grey */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Front face */
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;  /* push content to the top */
+  padding: 1rem;
+}
+.flip-card-front img {
+  max-width: 90%;
+  max-height: 50%;
+  margin-top: 0;        /* reset any negative margins */
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+.flip-card-front h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.2rem;
+  color: red;
+}
+.flip-card-front p {
+  font-size: 0.9rem;
+  color: #555;
+}
+.flip-card-front span {
+  font-style: italic;
+}
+.flip-card-front strong {
+  align-self: flex-start;  /* left-align within the flex column */
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+/* Back face */
+.flip-card-back {
+  position: relative;
+  transform: rotateY(180deg);
+  padding: 1rem;
+}
+.flip-card-back h4 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+.flip-card-back li {
+  font-style: initial;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+.flip-card-back strong {
+  font-style: italic;
+  color: #333;
+}
+
+.flip-card-back p {
+  color: grey;
+  display: block;
+  font-size: xx-small;
+  text-align: center;  /* if you want the text itself centered */
+  margin-left: 1rem;
+  margin-top: 5rem;
+  width: 90%;          /* optional—give it some padding from the edges */
+}
+
+.flip-card-back button {
+  cursor: pointer;
+  color: blue;
+  padding: 5px;
+  border-radius: 0;
+  border: 3px solid red;
+}
+
+button:hover {
+  color: #101821;
+  border: 3px solid green;
+}
