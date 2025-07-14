@@ -2,21 +2,23 @@
 
 body {
   margin: 0;
-  background: #fff; /* page stays white */
+  background: #fff;
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Purple “stage” just behind your card */
+
 .card-container {
   display: flex;
-  justify-content: center;  /* horizontal centering */
-  align-items: center;      /* vertical centering */
-  width: 100vw;             /* fill viewport width */
-  height: 100vh;            /* fill viewport height */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   background-color: #101821;
+  gap: 2rem;                   
 }
 
-/* The flip-card wrapper */
+
+
 .flip-card {
   width: 300px;
   height: 400px;
@@ -36,11 +38,11 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Common face styling */
+
 .flip-card-front,
 .flip-card-back {
-  background-color: #e0e0e0;  /* light grey */
-  border-color:     #bbb;     /* medium grey */
+  background-color: #e0e0e0;  
+  border-color:     #bbb;     
   position: absolute;
   width: 100%;
   height: 100%;
@@ -51,18 +53,18 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Front face */
+
 .flip-card-front {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;  /* push content to the top */
+  justify-content: flex-start; 
   padding: 1rem;
 }
 .flip-card-front img {
   max-width: 90%;
   max-height: 50%;
-  margin-top: 0;        /* reset any negative margins */
+  margin-top: 0;        
   margin-bottom: 1rem;
   border-radius: 4px;
 }
@@ -79,12 +81,12 @@ body {
   font-style: italic;
 }
 .flip-card-front strong {
-  align-self: flex-start;  /* left-align within the flex column */
+  align-self: flex-start;  
   margin-top: 0.5rem;
   color: #333;
 }
 
-/* Back face */
+
 .flip-card-back {
   position: relative;
   transform: rotateY(180deg);
@@ -113,10 +115,10 @@ body {
   color: grey;
   display: block;
   font-size: xx-small;
-  text-align: center;  /* if you want the text itself centered */
+  text-align: center;  
   margin-left: 1rem;
   margin-top: 5rem;
-  width: 90%;          /* optional—give it some padding from the edges */
+  width: 90%;
 }
 
 .flip-card-back button {
